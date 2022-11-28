@@ -1,5 +1,5 @@
 const catRoute = require('express').Router()
-const Category = require('../models/categoryModel')
+const Category = require('../models/CategoryModel')
 const asyncHandler = require('express-async-handler')
 const verify = require('../middleware/verify')
 const authAdmin = require('../middleware/authAdmin')
