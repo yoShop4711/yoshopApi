@@ -7,7 +7,7 @@ const port  = process.env.PORT || 5500
 const cookieParser = require('cookie-parser')
 const AuthRoute =  require('./routes/AuthRoute')
 const ProductRoute = require('./routes/ProductRoute')
-const CategoryRoute = require('./routes/CategoryRoute')
+const catRoute = require('./routes/CategoryRoute')
 const OrderRoute = require('./routes/OrderRoute')
 const WishListRoute = require('./routes/WishListRoute')
 const MessageRoute = require('./routes/MessageRoute')
@@ -65,7 +65,7 @@ db.once('open', function(){
 
   app.use(AuthRoute)
   app.use(ProductRoute)
-  app.use(CategoryRoute)
+  app.use( catRoute )
   app.use(OrderRoute)
   app.use(WishListRoute)
   app.use(MessageRoute)
