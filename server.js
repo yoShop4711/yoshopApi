@@ -29,7 +29,7 @@ db.once('open', function(){
 
 
   app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://yoshopapi.onrender.com/")
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000/")
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested, Content-Type, Accept Authorization"
