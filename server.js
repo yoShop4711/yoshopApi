@@ -49,7 +49,7 @@ db.once('open', function(){
 
   const io = require("socket.io")(3300)
 
-   app.use(cors())
+   //app.use(cors())
   app.use("/public", express.static(path.join(__dirname, '/public')));
   // app.use("/products", express.static(path.join(__dirname, '/products')));
   app.use(express.json({limit: '50mb'}))
