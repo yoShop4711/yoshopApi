@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const port  = process.env.PORT || 5500
- const cors = require('cors')
+//  const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const AuthRoute =  require('./routes/AuthRoute')
 const ProductRoute = require('./routes/ProductRoute')
@@ -28,24 +28,24 @@ db.once('open', function(){
   });
 
 
-//   app.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "http://localhost:3000")
-//     res.header(
-//       "Access-Control-Allow-Headers",
-//       "Origin, X-Requested, Content-Type, Accept Authorization"
-//     )
-//     if (req.method === "OPTIONS") {
-//       res.header(
-//         "Access-Control-Allow-Methods",
-//         "POST, PUT, PATCH, GET, DELETE"
-//       )
-//       return res.status(200).json({})
-//     }
-//     next()
-//   })
+  app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000")
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested, Content-Type, Accept Authorization"
+    )
+    if (req.method === "OPTIONS") {
+      res.header(
+        "Access-Control-Allow-Methods",
+        "POST, PUT, PATCH, GET, DELETE"
+      )
+      return res.status(200).json({})
+    }
+    next()
+  })
   
 
- app.use(cors())
+//  app.use(cors())
   app.use("/public", express.static(path.join(__dirname, '/public')));
   // app.use("/products", express.static(path.join(__dirname, '/products')));
   app.use(express.json({limit: '50mb'}))
