@@ -13,6 +13,8 @@ const WishListRoute = require('./routes/WishListRoute')
 const MessageRoute = require('./routes/MessageRoute')
 const path = require('path')
 
+app.use(cors())
+
 const io = require("socket.io")(3300)
 
 
@@ -45,7 +47,7 @@ db.once('open', function(){
 //   })
   
 
- app.options("*", cors())
+ 
   app.use("/public", express.static(path.join(__dirname, '/public')));
   // app.use("/products", express.static(path.join(__dirname, '/products')));
   app.use(express.json({limit: '50mb'}))
